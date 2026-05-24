@@ -1,0 +1,603 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+    <title>Sri Konda Devathala Jyothishalayam | Divine Astrology & Spiritual Solutions</title>
+    <!-- Google Fonts: Indian Typography + Modern Sans -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&family=Playfair+Display:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <!-- Font Awesome 6 -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <!-- Lightbox for gallery -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.4/css/lightbox.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: #fef7e6;
+            color: #2d1b0e;
+            scroll-behavior: smooth;
+        }
+
+        :root {
+            --saffron: #e67e22;
+            --deep-maroon: #6e2c2c;
+            --gold: #d4a373;
+            --sand: #f9e5c8;
+            --dark-bg: #3e2a1f;
+            --shadow: 0 20px 35px -12px rgba(0, 0, 0, 0.15);
+        }
+
+        ::-webkit-scrollbar { width: 8px; }
+        ::-webkit-scrollbar-track { background: #f1e1c0; }
+        ::-webkit-scrollbar-thumb { background: var(--saffron); border-radius: 10px; }
+
+        .navbar {
+            background: rgba(255, 248, 235, 0.96);
+            backdrop-filter: blur(8px);
+            padding: 1rem 5%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+            border-bottom: 2px solid var(--gold);
+        }
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+        .logo-icon {
+            font-size: 2.2rem;
+            color: var(--saffron);
+        }
+        .logo h1 {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.4rem;
+            font-weight: 800;
+            color: var(--deep-maroon);
+            letter-spacing: -0.3px;
+            line-height: 1.2;
+        }
+        .logo p {
+            font-size: 0.7rem;
+            font-weight: 500;
+            color: #a1562a;
+            letter-spacing: 1px;
+        }
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+            list-style: none;
+        }
+        .nav-links a {
+            text-decoration: none;
+            font-weight: 600;
+            color: #4a2e1e;
+            transition: 0.3s;
+            font-size: 1rem;
+        }
+        .nav-links a:hover, .nav-links a.active {
+            color: var(--saffron);
+            border-bottom: 2px solid var(--saffron);
+            padding-bottom: 4px;
+        }
+        .mobile-menu {
+            display: none;
+            font-size: 1.8rem;
+            cursor: pointer;
+            color: var(--deep-maroon);
+        }
+
+        /* Hero Banner Carousel - Indian Images */
+        .hero {
+            position: relative;
+            height: 85vh;
+            min-height: 550px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            color: white;
+            overflow: hidden;
+        }
+        .hero-slides {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -2;
+        }
+        .hero-slide {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-size: cover;
+            background-position: center;
+            opacity: 0;
+            transition: opacity 1s ease-in-out;
+        }
+        .hero-slide.active {
+            opacity: 1;
+        }
+        .hero-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.55);
+            background: linear-gradient(135deg, rgba(45, 27, 14, 0.8), rgba(110, 44, 44, 0.6));
+            z-index: -1;
+        }
+        .hero-content {
+            max-width: 800px;
+            padding: 1.5rem;
+            z-index: 2;
+            animation: fadeUp 1s ease-out;
+        }
+        .hero-content h2 {
+            font-size: 2.8rem;
+            font-family: 'Playfair Display', serif;
+            text-shadow: 2px 2px 8px rgba(0,0,0,0.5);
+        }
+        .hero-content p {
+            font-size: 1.2rem;
+            margin: 1rem 0;
+            font-weight: 500;
+        }
+        .btn-gold {
+            display: inline-block;
+            background: var(--gold);
+            color: #2d1b0e;
+            padding: 12px 32px;
+            border-radius: 40px;
+            font-weight: bold;
+            margin-top: 1rem;
+            text-decoration: none;
+            transition: 0.3s;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+        }
+        .btn-gold:hover {
+            background: #e6b87e;
+            transform: translateY(-3px);
+        }
+
+        @keyframes fadeUp {
+            from { opacity: 0; transform: translateY(30px);}
+            to { opacity: 1; transform: translateY(0);}
+        }
+
+        .section {
+            padding: 5rem 5%;
+        }
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        .section-title {
+            text-align: center;
+            font-family: 'Playfair Display', serif;
+            font-size: 2.5rem;
+            color: var(--deep-maroon);
+            margin-bottom: 3rem;
+            position: relative;
+        }
+        .section-title:after {
+            content: '';
+            display: block;
+            width: 80px;
+            height: 3px;
+            background: var(--saffron);
+            margin: 0.8rem auto 0;
+            border-radius: 4px;
+        }
+
+        .about-grid {
+            display: flex;
+            gap: 3rem;
+            align-items: center;
+            flex-wrap: wrap;
+        }
+        .about-text {
+            flex: 1.2;
+            font-size: 1.05rem;
+            line-height: 1.7;
+        }
+        .exp-badge {
+            background: #f2e3cf;
+            border-left: 5px solid var(--saffron);
+            padding: 1rem;
+            margin: 1.2rem 0;
+            font-weight: 600;
+        }
+        .about-img {
+            flex: 1;
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: var(--shadow);
+        }
+        .about-img img {
+            width: 100%;
+            height: auto;
+            display: block;
+            transition: transform 0.4s;
+        }
+        .about-img:hover img { transform: scale(1.02); }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2.2rem;
+        }
+        .service-card {
+            background: white;
+            border-radius: 28px;
+            padding: 2rem 1.5rem;
+            text-align: center;
+            transition: all 0.3s;
+            box-shadow: 0 12px 28px rgba(0, 0, 0, 0.05);
+            border: 1px solid #ffe0b5;
+        }
+        .service-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 20px 35px -8px rgba(230, 126, 34, 0.2);
+            border-color: var(--gold);
+        }
+        .service-icon {
+            font-size: 3rem;
+            color: var(--saffron);
+            margin-bottom: 1rem;
+        }
+        .service-card h3 { font-size: 1.5rem; margin-bottom: 0.8rem; font-weight: 700; }
+
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 1.8rem;
+            margin-top: 2rem;
+        }
+        .gallery-item {
+            border-radius: 24px;
+            overflow: hidden;
+            box-shadow: var(--shadow);
+            cursor: pointer;
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+        .gallery-item img {
+            width: 100%;
+            height: 260px;
+            object-fit: cover;
+            display: block;
+            transition: transform 0.5s;
+        }
+        .gallery-item:hover {
+            transform: translateY(-6px);
+            box-shadow: 0 20px 30px -8px rgba(0,0,0,0.2);
+        }
+        .gallery-item:hover img { transform: scale(1.03); }
+
+        .video-showcase {
+            background: #fbf3e8;
+            border-radius: 40px;
+            margin-top: 4rem;
+            padding: 2.5rem;
+            text-align: center;
+        }
+        .video-container {
+            max-width: 800px;
+            margin: 0 auto;
+            border-radius: 24px;
+            overflow: hidden;
+            box-shadow: var(--shadow);
+        }
+        video { width: 100%; display: block; }
+
+        .contact-wrapper {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 3rem;
+        }
+        .contact-info, .contact-form {
+            flex: 1;
+            background: #fff7ed;
+            padding: 2rem;
+            border-radius: 32px;
+            box-shadow: var(--shadow);
+        }
+        .info-item {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            margin-bottom: 1.5rem;
+            font-size: 1.1rem;
+        }
+        .info-item i {
+            width: 40px;
+            height: 40px;
+            background: var(--saffron);
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .contact-form { background: white; }
+        input, textarea {
+            width: 100%;
+            padding: 12px 18px;
+            border: 1px solid #f0dbb4;
+            border-radius: 50px;
+            font-family: inherit;
+            background: #fefaf5;
+        }
+        textarea { border-radius: 24px; resize: vertical; }
+        .btn-submit {
+            background: var(--deep-maroon);
+            color: white;
+            border: none;
+            padding: 12px 30px;
+            border-radius: 50px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+        .btn-submit:hover { background: var(--saffron); }
+        footer {
+            background: #2d1b0e;
+            color: #e9d9c2;
+            text-align: center;
+            padding: 2rem;
+        }
+        @media (max-width: 850px) {
+            .nav-links {
+                display: none;
+                flex-direction: column;
+                width: 100%;
+                background: #fff6ea;
+                padding: 1rem;
+                border-radius: 20px;
+                margin-top: 1rem;
+            }
+            .nav-links.active { display: flex; }
+            .mobile-menu { display: block; }
+            .hero-content h2 { font-size: 2rem; }
+            .section-title { font-size: 2rem; }
+            .about-grid { flex-direction: column; }
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <nav class="navbar">
+        <div class="logo">
+            <i class="fas fa-om logo-icon"></i>
+            <div>
+                <h1>శ్రీ కొండ దేవతల జ్యోతిషాలయం</h1>
+                <p>Sri Konda Devathala Jyothishalayam</p>
+            </div>
+        </div>
+        <div class="mobile-menu" id="mobileMenuBtn">
+            <i class="fas fa-bars"></i>
+        </div>
+        <ul class="nav-links" id="navLinks">
+            <li><a href="#home" class="nav-link active">Home</a></li>
+            <li><a href="#about" class="nav-link">About Us</a></li>
+            <li><a href="#services" class="nav-link">Services</a></li>
+            <li><a href="#gallery" class="nav-link">Gallery</a></li>
+            <li><a href="#contact" class="nav-link">Contact</a></li>
+        </ul>
+    </nav>
+</header>
+
+<main>
+    <!-- Home Section with Indian Banner Images -->
+    <section id="home" class="hero">
+        <div class="hero-slides" id="heroSlides">
+            <div class="hero-slide active" style="background-image: url('https://images.pexels.com/photos/258944/pexels-photo-258944.jpeg?auto=compress&cs=tinysrgb&w=1600');"></div>
+            <div class="hero-slide" style="background-image: url('https://images.pexels.com/photos/2387873/pexels-photo-2387873.jpeg?auto=compress&cs=tinysrgb&w=1600');"></div>
+            <div class="hero-slide" style="background-image: url('https://images.pexels.com/photos/1906440/pexels-photo-1906440.jpeg?auto=compress&cs=tinysrgb&w=1600');"></div>
+            <div class="hero-slide" style="background-image: url('https://images.pexels.com/photos/8965573/pexels-photo-8965573.jpeg?auto=compress&cs=tinysrgb&w=1600');"></div>
+        </div>
+        <div class="hero-overlay"></div>
+        <div class="hero-content">
+            <h2>ఎటు వంటి సమస్య ఉన్నా, ఫోన్ ద్వారా పరిష్కారం</h2>
+            <p>🙏 అఘోరా తాంత్రిక పూజారి ద్వారా నయం || వశీకరణం స్పెషలిస్ట్ 🙏</p>
+            <a href="#contact" class="btn-gold">📞 Consult Now →</a>
+        </div>
+    </section>
+
+    <!-- About Us Section - No personal names, only divine reference -->
+    <section id="about" class="section">
+        <div class="container">
+            <h2 class="section-title">About Sri Konda Devathala Jyothishalayam</h2>
+            <div class="about-grid">
+                <div class="about-text">
+                    <p>🌟 <strong>Sri Konda Devathala Jyothishalayam</strong> — A sacred spiritual center blessed by the eternal grace of <strong>Konda Devathalu</strong> (the sacred hill deities). For generations, our Jyothishalayam has brought peace, prosperity, and divine solutions to thousands of suffering souls.</p>
+                    <p>🔮 We specialize in providing <strong>phone-based astrological solutions</strong> for problems related to marriage, career, health, black magic, evil spirits, and <strong>Vashikaran</strong> for both men and women. Every remedy is rooted in ancient Aghora tantra and Vedic wisdom, delivered with modern confidentiality and compassion.</p>
+                    <div class="exp-badge">
+                        <i class="fas fa-chart-line" style="color:#e67e22;"></i> Decades of Jyotish Experience &nbsp;|&nbsp;
+                        <i class="fas fa-hand-sparkles"></i> Thousands of Satisfied Devotees
+                    </div>
+                    <p>✨ The divine vibrations of Konda Devathala Ashirvadam ensure that your obstacles dissolve and positivity flows. Consult us for personalized horoscope analysis, gemstone recommendations, and powerful homams performed with authentic Vedic rituals.</p>
+                </div>
+                <div class="about-img">
+                    <img src="https://images.pexels.com/photos/716449/pexels-photo-716449.jpeg?auto=compress&cs=tinysrgb&w=600" alt="Indian Temple Astrology">
+                </div>
+            </div>
+            <div class="video-showcase">
+                <h3 style="font-family: Playfair Display; color:#6e2c2c;">📿 Divine Pooja & Aghora Anusthanam 📿</h3>
+                <div class="video-container">
+                    <video controls poster="https://images.pexels.com/photos/3962867/pexels-photo-3962867.jpeg?auto=compress&cs=tinysrgb&w=600">
+                        <source src="https://cdn.pixabay.com/video/2021/11/22/99322-647139017_large.mp4" type="video/mp4">
+                        Your browser does not support the video.
+                    </video>
+                </div>
+                <p style="margin-top: 1rem;">Witness the sacred fire ritual and chanting — remedies tailored to your birth chart.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services" class="section" style="background: #fdf6ea;">
+        <div class="container">
+            <h2 class="section-title">Our Divine Services</h2>
+            <div class="services-grid">
+                <div class="service-card"><i class="fas fa-chart-simple service-icon"></i><h3>Phone Astrology</h3><p>Detailed predictions & solutions over call — immediate remedies for career, finance, relationships.</p></div>
+                <div class="service-card"><i class="fas fa-heart service-icon"></i><h3>Vashikaran Specialist</h3><p>Ethical & effective Vashikaran for love, marriage, family harmony. Attract desired person.</p></div>
+                <div class="service-card"><i class="fas fa-skull service-icon"></i><h3>Aghora Tantra & Removal</h3><p>Eliminate negative energies, black magic, evil spirits. Powerful Tantric rituals.</p></div>
+                <div class="service-card"><i class="fas fa-hand-holding-heart service-icon"></i><h3>Graha Dosha Nivarana</h3><p>Planetary remedies, Maha Mrityunjaya, Navagraha homam, gemstone consultation.</p></div>
+                <div class="service-card"><i class="fas fa-pray service-icon"></i><h3>Marriage Problem Solutions</h3><p>Delay in marriage, compatibility issues, inter-caste love marriage support.</p></div>
+                <div class="service-card"><i class="fas fa-chalkboard-user service-icon"></i><h3>Business & Career Guidance</h3><p>Muhurta selection, partnership compatibility, wealth attraction remedies.</p></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- GALLERY SECTION - All Indian cultural & temple images -->
+    <section id="gallery" class="section">
+        <div class="container">
+            <h2 class="section-title">Sacred Moments & Temple Rituals</h2>
+            <div class="gallery-grid">
+                <a href="https://images.pexels.com/photos/2794763/pexels-photo-2794763.jpeg?auto=compress&cs=tinysrgb&w=1200" data-lightbox="gallery" data-title="Divine Pooja Ceremony at Temple">
+                    <div class="gallery-item"><img src="https://images.pexels.com/photos/2794763/pexels-photo-2794763.jpeg?auto=compress&cs=tinysrgb&w=600" alt="Indian Temple Pooja"></div>
+                </a>
+                <a href="https://images.pexels.com/photos/4245829/pexels-photo-4245829.jpeg?auto=compress&cs=tinysrgb&w=1200" data-lightbox="gallery" data-title="Sacred Homam Ritual">
+                    <div class="gallery-item"><img src="https://images.pexels.com/photos/4245829/pexels-photo-4245829.jpeg?auto=compress&cs=tinysrgb&w=600" alt="Homam Fire Ritual"></div>
+                </a>
+                <a href="https://images.pexels.com/photos/2615681/pexels-photo-2615681.jpeg?auto=compress&cs=tinysrgb&w=1200" data-lightbox="gallery" data-title="Konda Devathala Temple Blessings">
+                    <div class="gallery-item"><img src="https://images.pexels.com/photos/2615681/pexels-photo-2615681.jpeg?auto=compress&cs=tinysrgb&w=600" alt="Temple Blessings"></div>
+                </a>
+                <a href="https://images.pexels.com/photos/3771112/pexels-photo-3771112.jpeg?auto=compress&cs=tinysrgb&w=1200" data-lightbox="gallery" data-title="Vedic Astrology Consultation">
+                    <div class="gallery-item"><img src="https://images.pexels.com/photos/3771112/pexels-photo-3771112.jpeg?auto=compress&cs=tinysrgb&w=600" alt="Astrology Session India"></div>
+                </a>
+                <a href="https://images.pexels.com/photos/6732105/pexels-photo-6732105.jpeg?auto=compress&cs=tinysrgb&w=1200" data-lightbox="gallery" data-title="Sri Konda Devathala Hill Temple">
+                    <div class="gallery-item"><img src="https://images.pexels.com/photos/6732105/pexels-photo-6732105.jpeg?auto=compress&cs=tinysrgb&w=600" alt="Hill Temple"></div>
+                </a>
+                <a href="https://images.pexels.com/photos/3962482/pexels-photo-3962482.jpeg?auto=compress&cs=tinysrgb&w=1200" data-lightbox="gallery" data-title="Rudra Abhishekam Ceremony">
+                    <div class="gallery-item"><img src="https://images.pexels.com/photos/3962482/pexels-photo-3962482.jpeg?auto=compress&cs=tinysrgb&w=600" alt="Abhishekam"></div>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Us Section -->
+    <section id="contact" class="section">
+        <div class="container">
+            <h2 class="section-title">Connect With Our Spiritual Center</h2>
+            <div class="contact-wrapper">
+                <div class="contact-info">
+                    <h3><i class="fas fa-phone-alt" style="color:#e67e22;"></i> Get In Touch</h3>
+                    <div class="info-item"><i class="fas fa-map-marker-alt"></i><span>Sri Konda Devathala Jyothishalayam, Hill Temple Road, Vijayawada, Andhra Pradesh - 520001</span></div>
+                    <div class="info-item"><i class="fas fa-phone"></i><span>+91 98765 43210 (Call / WhatsApp)</span></div>
+                    <div class="info-item"><i class="fas fa-envelope"></i><span>contact@srikondadevathala.com</span></div>
+                    <div class="info-item"><i class="fab fa-whatsapp"></i><span>Available 7 AM - 9 PM (IST)</span></div>
+                    <div style="margin-top: 30px;"><i class="fas fa-clock"></i> <strong>Phone Consultation Timings:</strong> <br>Morning 8:00 AM to 8:00 PM <br> <span style="font-size:0.9rem;">Confidential & Immediate solutions</span></div>
+                </div>
+                <div class="contact-form">
+                    <h3>📩 Request a Callback / Query</h3>
+                    <form id="inquiryForm">
+                        <div class="form-group"><input type="text" id="name" placeholder="Your Full Name" required></div>
+                        <div class="form-group"><input type="tel" id="phone" placeholder="Mobile Number" required></div>
+                        <div class="form-group"><input type="email" id="email" placeholder="Email (Optional)"></div>
+                        <div class="form-group"><textarea rows="3" id="message" placeholder="Describe your problem (eg. career, marriage, black magic)"></textarea></div>
+                        <button type="submit" class="btn-submit"><i class="fas fa-paper-plane"></i> Send Message</button>
+                        <p id="formFeedback" style="margin-top: 12px; font-size: 0.8rem; color: green;"></p>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+</main>
+
+<footer>
+    <p>© 2025 Sri Konda Devathala Jyothishalayam | Spiritual Healing & Astrology | All Rights Reserved</p>
+    <p style="font-size: 0.8rem; margin-top: 8px;">🙏 Results may vary based on individual karma. Solutions provided with divine ethics and ancient Vedic wisdom.</p>
+</footer>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.4/js/lightbox-plus-jquery.min.js"></script>
+<script>
+    // Mobile Menu Toggle
+    const mobileBtn = document.getElementById('mobileMenuBtn');
+    const navLinks = document.getElementById('navLinks');
+    mobileBtn.addEventListener('click', () => navLinks.classList.toggle('active'));
+
+    // Auto banner carousel
+    let slides = document.querySelectorAll('.hero-slide');
+    let currentSlide = 0;
+    function nextSlide() {
+        slides[currentSlide].classList.remove('active');
+        currentSlide = (currentSlide + 1) % slides.length;
+        slides[currentSlide].classList.add('active');
+    }
+    if(slides.length > 1) setInterval(nextSlide, 5000);
+
+    // Active link highlight on scroll & close mobile menu
+    const sections = document.querySelectorAll('section');
+    const navItems = document.querySelectorAll('.nav-link');
+    window.addEventListener('scroll', () => {
+        let current = '';
+        sections.forEach(section => {
+            const sectionTop = section.offsetTop - 120;
+            if(pageYOffset >= sectionTop && pageYOffset < sectionTop + section.offsetHeight) {
+                current = section.getAttribute('id');
+            }
+        });
+        navItems.forEach(link => {
+            link.classList.remove('active');
+            if(link.getAttribute('href') === `#${current}`) link.classList.add('active');
+        });
+        if (navLinks.classList.contains('active')) navLinks.classList.remove('active');
+    });
+
+    // Contact form handler
+    const contactForm = document.getElementById('inquiryForm');
+    const feedback = document.getElementById('formFeedback');
+    contactForm.addEventListener('submit', (e) => {
+        e.preventDefault();
+        const name = document.getElementById('name').value.trim();
+        const phone = document.getElementById('phone').value.trim();
+        if(!name || !phone) {
+            feedback.style.color = "red";
+            feedback.innerText = "❌ Please enter name and mobile number for consultation.";
+            setTimeout(() => feedback.innerText = "", 3000);
+            return;
+        }
+        feedback.style.color = "#2c7a3e";
+        feedback.innerHTML = "✨ Om Sri Konda Devathalaku Namaha! We'll contact you within 2 hours. May the divine blessings be with you! ✨";
+        contactForm.reset();
+        setTimeout(() => feedback.innerText = "", 5000);
+    });
+
+    // smooth anchor click
+    document.querySelectorAll('.nav-link, .btn-gold').forEach(anchor => {
+        anchor.addEventListener('click', function(e) {
+            if(this.getAttribute('href') && this.getAttribute('href').startsWith('#')) {
+                e.preventDefault();
+                const targetId = this.getAttribute('href').substring(1);
+                const targetElem = document.getElementById(targetId);
+                if(targetElem) targetElem.scrollIntoView({ behavior: 'smooth' });
+                if(navLinks.classList.contains('active')) navLinks.classList.remove('active');
+            }
+        });
+    });
+    lightbox.option({
+        'resizeDuration': 200,
+        'wrapAround': true,
+        'albumLabel': "Image %1 of %2"
+    });
+</script>
+</body>
+</html>
